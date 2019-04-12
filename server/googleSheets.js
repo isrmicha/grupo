@@ -1,6 +1,6 @@
 function listaEsforcoSalario(auth) {
   return new Promise((resolve, reject) => {
-
+    const path = require('path')
     const fs = require("fs")
     const readline = require("readline")
     const { google } = require("googleapis")
@@ -67,7 +67,7 @@ function listaEsforcoSalario(auth) {
     }
 
     // Load client secrets from a local file.
-    fs.readFile("./server/credentials.json", (err, content) => {
+    fs.readFile(path.join(__dirname,"credentials.json"), (err, content) => {
       if (err) return console.log("Error loading client secret file:", err)
       // Authorize a client with credentials, then call the Google Sheets API.
       authorize(JSON.parse(content), auth => {
