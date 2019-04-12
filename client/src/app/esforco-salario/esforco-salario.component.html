@@ -1,5 +1,19 @@
 <mat-card style="width :80%">
-  <div style="display: block">
+  <ngx-charts-line-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-line-chart>
+  <!-- <div style="display: block">
     <canvas 
       baseChart
       *ngIf="bubbleChartData?.length"
@@ -10,5 +24,5 @@
       [chartType]="bubbleChartType"
     >
     </canvas>
-  </div>
+  </div> -->
 </mat-card>

@@ -10,7 +10,7 @@ import { EsforcoSalarioComponent } from './esforco-salario/esforco-salario.compo
 import { PrecoMulheresComponent } from './preco-mulheres/preco-mulheres.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +24,8 @@ import {MatCardModule} from '@angular/material/card';
     ChartsModule,
     MatTabsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
