@@ -1,0 +1,22 @@
+{
+  "name": "grupo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server && npm ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isrmicha/grupo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isrmicha/grupo/issues"
+  },
+  "homepage": "https://github.com/isrmicha/grupo#readme",
+  "dependencies": {},
+  "devDependencies": {}
+}
