@@ -20,6 +20,8 @@
     "url": "https://github.com/isrmicha/grupo/issues"
   },
   "homepage": "https://github.com/isrmicha/grupo#readme",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.4"
+  },
   "devDependencies": {}
 }
