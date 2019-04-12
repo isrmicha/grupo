@@ -21,7 +21,10 @@
   },
   "homepage": "https://github.com/isrmicha/grupo#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "googleapis": "^27.0.0"
   },
   "devDependencies": {}
 }
