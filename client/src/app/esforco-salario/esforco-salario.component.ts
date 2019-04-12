@@ -11,46 +11,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EsforcoSalarioComponent implements OnInit {
   constructor(public http: HttpClient) { }
-  async ngOnInit() {
-    console.log`requisitando`
-    let dados: any = await this.http.get('https://grupogado.herokuapp.com/esforcoSalario').toPromise()
-    console.log(dados)
-    dados.map(rows => {
-      rows.map(row => {
-        row.map(cell => {
-          // this.bubbleChartData.push({
-          //   label: 
-          // })
-        })
-      })
-    })
-    // {
-    //   data: [
-    //     { x: 10, y: 10, r: 5 },
-    //     { x: 15, y: 5, r: 5 },
-    //     { x: 26, y: 12, r: 5 },
-    //     { x: 7, y: 8, r: 5 },
-    //   ],
-    //     label: 'Series A',
-    //       backgroundColor: 'green',
-    //         borderColor: 'blue',
-    //           hoverBackgroundColor: 'purple',
-    //             hoverBorderColor: 'red',
-    // },
-    // {
-    //   data: [
-    //     { x: 10, y: 10, r: 5 },
-    //     { x: 15, y: 5, r: 5 },
-    //     { x: 26, y: 12, r: 5 },
-    //     { x: 7, y: 8, r: 5 },
-    //   ],
-    //     label: 'Series B',
-    //       backgroundColor: 'green',
-    //         borderColor: 'blue',
-    //           hoverBackgroundColor: 'purple',
-    //             hoverBorderColor: 'red',
-    // },
-  }
   public bubbleChartOptions: ChartOptions = {
     responsive: true,
     scales: {
@@ -75,34 +35,7 @@ export class EsforcoSalarioComponent implements OnInit {
   public bubbleChartType: ChartType = 'bubble';
   public bubbleChartLegend = true;
 
-  public bubbleChartData: ChartDataSets[] = [
-    // {
-    //   data: [
-    //     { x: 10, y: 10, r: 5 },
-    //     { x: 15, y: 5, r: 5 },
-    //     { x: 26, y: 12, r: 5 },
-    //     { x: 7, y: 8, r: 5 },
-    //   ],
-    //   label: 'Series A',
-    //   backgroundColor: 'green',
-    //   borderColor: 'blue',
-    //   hoverBackgroundColor: 'purple',
-    //   hoverBorderColor: 'red',
-    // },
-    // {
-    //   data: [
-    //     { x: 10, y: 10, r: 5 },
-    //     { x: 15, y: 5, r: 5 },
-    //     { x: 26, y: 12, r: 5 },
-    //     { x: 7, y: 8, r: 5 },
-    //   ],
-    //   label: 'Series B',
-    //   backgroundColor: 'green',
-    //   borderColor: 'blue',
-    //   hoverBackgroundColor: 'purple',
-    //   hoverBorderColor: 'red',
-    // },
-  ];
+  public bubbleChartData: ChartDataSets[] = [];
 
   public bubbleChartColors: Color[] = [
     {
@@ -120,4 +53,23 @@ export class EsforcoSalarioComponent implements OnInit {
       ]
     }
   ];
+  async ngOnInit() {
+    let rows: any = await this.http.get('https://grupogado.herokuapp.com/esforcoSalario').toPromise()
+    console.log(rows)
+    rows.map((row, index) => {
+      console.log(row)
+      this.bubbleChartData[index] =
+        {
+          data: [
+            { x: row[0], y: row[1], r: 5 }
+          ],
+          label: row[index],
+          backgroundColor: 'green',
+          borderColor: 'blue',
+          hoverBackgroundColor: 'purple',
+          hoverBorderColor: 'red',
+        }
+    })
+    console.log(this.bubbleChartData)
+  }
 }
