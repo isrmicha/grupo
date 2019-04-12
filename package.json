@@ -4,6 +4,9 @@
   "description": "",
   "main": "./server/server.js",
   "scripts": {
+    "preinstall": "npm run installClient && npm run installServer",
+    "installClient": "cd server && npm i",
+    "installServer": "cd server && npm i",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd server && node server"
   },
