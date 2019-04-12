@@ -1,13 +1,14 @@
-<div>
-  <div>
-    <div style="display: block">
-      <canvas baseChart
-        [datasets]="bubbleChartData"
-        [options]="bubbleChartOptions"
-        [colors]="bubbleChartColors"
-        [legend]="bubbleChartLegend"
-        [chartType]="bubbleChartType">
-      </canvas>
-    </div>
- </div>
-</div>
+<mat-card style="width :90%;">
+  <div style="display: block">
+    <canvas 
+      baseChart
+      *ngIf="bubbleChartData?.length"
+      [datasets]="bubbleChartData"
+      [options]="bubbleChartOptions"
+      [colors]="bubbleChartColors"
+      [legend]="bubbleChartLegend"
+      [chartType]="bubbleChartType"
+    >
+    </canvas>
+  </div>
+</mat-card>

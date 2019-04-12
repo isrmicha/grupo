@@ -9,6 +9,7 @@ import { ChartsModule } from 'ng2-charts';
 import { EsforcoSalarioComponent } from './esforco-salario/esforco-salario.component';
 import { PrecoMulheresComponent } from './preco-mulheres/preco-mulheres.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ChartsModule,
     MatTabsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,7 +18,7 @@ export class EsforcoSalarioComponent implements OnInit {
         {
           ticks: {
             min: 0,
-            max: 100,
+            max: 10,
           }
         }
       ],
@@ -26,7 +26,7 @@ export class EsforcoSalarioComponent implements OnInit {
         {
           ticks: {
             min: 0,
-            max: 100,
+            max: 10,
           }
         }
       ]
@@ -35,7 +35,7 @@ export class EsforcoSalarioComponent implements OnInit {
   public bubbleChartType: ChartType = 'bubble';
   public bubbleChartLegend = true;
 
-  public bubbleChartData: ChartDataSets[] = [];
+  public bubbleChartData = [];
 
   public bubbleChartColors: Color[] = [
     {
@@ -55,21 +55,20 @@ export class EsforcoSalarioComponent implements OnInit {
   ];
   async ngOnInit() {
     let rows: any = await this.http.get('https://grupogado.herokuapp.com/esforcoSalario').toPromise()
-    console.log(rows)
     rows.map((row, index) => {
       console.log(row)
       this.bubbleChartData[index] =
         {
           data: [
-            { x: row[0], y: row[1], r: 5 }
+            { x: row[1], y: row[2], r: 5 }
           ],
-          label: row[index],
+          label: row[0],
           backgroundColor: 'green',
           borderColor: 'blue',
           hoverBackgroundColor: 'purple',
           hoverBorderColor: 'red',
         }
-    })
-    console.log(this.bubbleChartData)
-  }
+  })
+  console.log(this.bubbleChartData)
+}
 }
