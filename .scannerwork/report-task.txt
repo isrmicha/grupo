@@ -1,0 +1,7 @@
+organization=isrmicha-github
+projectKey=isrmicha_grupo
+serverUrl=https://sonarcloud.io
+serverVersion=7.8.0.23279
+dashboardUrl=https://sonarcloud.io/dashboard?id=isrmicha_grupo
+ceTaskId=AWoTJfvNhu1O2E4k8Myg
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWoTJfvNhu1O2E4k8Myg
