@@ -7,7 +7,7 @@
     "preinstall": "npm run installClient && npm run installServer",
     "installClient": "cd server && npm i",
     "installServer": "cd server && npm i",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" ",
     "start": "cd server && node server"
   },
   "repository": {
